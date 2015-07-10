@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^file-manager.html', views.filemanager, name="filemanager"),
     url(r'^icon.html', views.icon, name="icon"),
     url(r'^login.html', views.login, name="login"),
+    url(r'^help.html', views.help, name="help"),
 ]

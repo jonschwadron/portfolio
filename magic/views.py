@@ -53,3 +53,6 @@ def icon(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def help(request):
+    return render(request, 'widgets.html')
