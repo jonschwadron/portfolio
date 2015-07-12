@@ -1,0 +1,405 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CULTUREiQ</title>
+
+  {% include 'cultureiq-web/stylesheets.html' %}
+
+  <style>
+  .navbar-buffer { margin:5px; }
+  .top-buffer { margin-top:100px; }
+  .top-buffer2 { margin-top:30px; }
+  .top-buffer3 { margin-top:20px; }
+  .title-buffer { margin:30px; }
+  .name-buffer { margin:20px; font-weight:bold; text-transform: uppercase;}
+  .container-buffer{padding:100px; }
+  .col-centered{float: none;margin: 0 auto; }
+  h1 {font-family:'Roboto Slab';font-size:350%;font-weight:lighter;line-height:100%; }
+  h2 {font-family:'Roboto Slab';font-size:190%;font-weight:light;line-height:150%; }
+  h3 {font-family: 'Open Sans', Helvetica, sans-serif;font-size:140%;font-weight:lighter;line-height:170%; }
+  .uppercase { text-transform: uppercase; }
+  .verticalcenter { vertical-align:middle; }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid navbar-buffer">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top"><img style="width:150px;" src="{% static 'img/culture-iq/cultureiq_logo.png' %}"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" >
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="uppercase verticalcenter page-scroll" href="#home"><span>Home</span></a>
+          </li>
+          <li>
+            <a class="uppercase verticalcenter page-scroll" href="#about">About</a>
+          </li>
+          <li>
+            <a class="uppercase verticalcenter page-scroll" href="#blog">Blog</a>
+          </li>
+          <li>
+            <a class="uppercase verticalcenter page-scroll" href="#contact">Login</a>
+          </li>
+          <li>
+            <a href="#getstarted"
+            class="uppercase "
+            style="font-size:16px;background-color:#87bf92;color:#fff;
+                   font-weight:600;margin-top:10px;margin-bottom:10px;
+                   margin-left:20px;margin-right:20px;height:30px;padding-top:3px;
+                   padding-bottom:5px;border-radius:4px;">
+              Learn More
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <section>
+    <div class="container container-buffer">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h1 class="section-heading">
+            Who We Are
+          </h1>
+        </div>
+      </div>
+
+
+      <div class="row top-buffer2">
+        <div class="col-xs-8 col-centered ">
+          <h2>
+            Our mission is to enable any company to understand,
+            manage, and strengthen their culture.
+          </h2>
+        </div>
+      </div>
+
+        <div class="row top-buffer2">
+          <div class="col-xs-8 col-centered ">
+            <h3><p>
+              We started CultureIQ because we believe in the power
+              of a strong culture. We believe culture is woven
+              through a company, driving everything from recruiting
+              and retention to engagement and success. We believe
+              culture is about people, and companies that listen and
+              understand their people will always outperform those
+              that don't. We believe culture is measurable, and can
+              be managed and objectively strengthened. We believe
+              culture is as fundamental as brand; a strong culture
+              is absolutely necessary for long-term success.
+            </p></h3>
+          </div>
+        </div>
+
+        <div class="row top-buffer3">
+          <div class="col-xs-8 col-centered ">
+            <h3><p>
+              Based in New York, CultureIQ was founded by Greg
+              Besner, a veteran entrepreneur who teaches at NYU
+              Stern Business School and has a notable history of
+              implementing successful culture initiatives.
+            </p></h3>
+          </div>
+        </div>
+
+        <div class="row top-buffer3">
+          <div class="col-xs-8 col-centered ">
+            <h3><p>
+              CultureIQ is backed by a group of successful business
+              leaders, including Zappos.com CEO Tony Hsieh’s
+              VegasTechFund and other entrepreneurs who have seen
+              the valuable impact of prioritizing culture at their
+              own companies.
+            </p></h3>
+          </div>
+        </div>
+
+        <div class="row top-buffer3">
+          <div class="col-xs-8 col-centered ">
+            <h3><p>
+              Read more about the CultureIQ story here.
+            </p></h3>
+          </div>
+        </div>
+    </section>
+
+    <!-- padding:30px 15px 30px 15px; -->
+    <section class="bg-primary" style="background-color:#445865">
+      <div class="container container-buffer" style="background-color:#445865">
+
+          <div class="row title-buffer">
+            <div class="col-xs-12 text-center" style="color:#fff" ><h2 class="uppercase">Team</h2></div>
+          </div>
+
+          <div class="row top-buffer2" >
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12 ">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/greg.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12 uppercase">Greg Besner</div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/jeremy.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12 ">Jeremy Hamel</div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/alex.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12 ">Alex Hart</div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/andrew.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12 ">Andrew McKenna</div>
+              </div>
+              </div>
+            </div>
+
+          <div class="row top-buffer2" >
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/danny.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                  <div class="col-xs-12 ">Danny Pinghero</div>
+                </div>
+              </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/jamie.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                  <div class="col-xs-12 ">Jamie Nichol</div>
+                </div>
+              </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/brady.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                  <div class="col-xs-12 ">Brady Loeck</div>
+                </div>
+              </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/reed.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12 ">Reed Beaty</div>
+              </div>
+            </div>
+          </div>
+
+        <div class="row top-buffer2" >
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/erin.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12 ">Erin Anderson</div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="row text-center">
+                <div class="col-xs-12">
+                  <p><span><img style="height:160px;" src="{% static 'img/culture-iq/team/cindy.png' %}"></span></p>
+                </div>
+              </div>
+              <div class="row text-center name-buffer">
+                <div class="col-xs-12">
+                  <div class="col-xs-12 ">Cindy Ho</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container container-buffer">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>Our Values</h2>
+            <br>
+            <h3>Treat ourselves and our customers with respect</h3>
+            <h3>Be creative and resourceful</h3>
+            <h3>Great people over great resumes</h3>
+            <h3>Understand metrics, but make human decisions</h3>
+            <h3>Be open to change and maintain flexibility</h3>
+            <h3>Celebrate and enjoy the journey</h3>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="bg-primary" style="background-color:#fff">
+      <div class="container container-buffer">
+
+        <div class="row row-centered">
+          <div class="col-xs-12 text-center" style="color:#000"><h2 class="uppercase">Advisors</h2></div>
+        </div>
+
+        <div class="row top-buffer" >
+          <div class="col-xs-4">
+            <div class="row">
+              <p class="text-center"><img style="height:160px;" src="{% static 'img/culture-iq/advisors/bernie_tenenbaum2.gif' %}"></p>
+            </div>
+            <div class="row name-buffer">
+              <p class="text-center" style="color:#000">Bernie Tenenbaum</p>
+            </div>
+          </div>
+
+          <div class="col-xs-4">
+            <div class="row">
+              <p class="text-center"><img style="height:160px;" src="{% static 'img/culture-iq/advisors/charles_stryker.png' %}"></p>
+            </div>
+            <div class="row name-buffer">
+              <p class="text-center" style="color:#000">Charles Stryker</p>
+            </div>
+          </div>
+
+          <div class="col-xs-4">
+            <div class="row">
+              <p class="text-center"><img style="height:160px;" src="{% static 'img/culture-iq/advisors/thatcher_bell.png' %}"></p>
+            </div>
+            <div class="row name-buffer">
+                <p class="text-center" style="color:#000">Thatcher Bell</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="row" style="margin-bottom:20px;">
+            <img class="pull-left" src="{% static 'img/culture-iq/cultureiq_logo.png' %}" style="height:30px;margin-top:50px;padding-left: 15px;">
+        </div>
+
+        <div class="row pn" style="color: #808080 !important;">
+          <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-8" style="border-bottom: 1px #c7cdd0 dashed; margin-left:15px;padding-left:0px; padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href="#">Home</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-8" style="border-bottom: 1px #c7cdd0 dashed; margin-left:15px;padding-left:0px; padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href="#">About</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-8" style="padding-left:0px; margin-left:15px;padding-bottom:0;margin-left:15px;7px;padding-top:8px;">
+                <a class="footer-link" href="#">Blog</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-8" style="border-bottom: 1px #c7cdd0 dashed;margin-left:15px; padding-left:0px; padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href="#">FAQ</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-8" style="border-bottom: 1px #c7cdd0 dashed; margin-left:15px;padding-left:0px; padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href="#">Press</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-8" style="padding-left:0px; margin-left:15px;padding-bottom:0;margin-left:15px; 7px;padding-top:8px;">
+                <a href="#">Contact</a>
+              </div>
+            </div>
+          </div>
+            <div class="col-xs-4">
+
+            </div>
+            <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-10" style="border-bottom: 1px #c7cdd0 dashed; margin-left:15px;padding-left:0px; padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href='mailto:hello@cultureiq.com'>hello@cultureIQ.com</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-10" style="border-bottom: 1px #c7cdd0 dashed; margin-left:15px;padding-left:0px; padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href="tel://212-755-8633">(212) 755 8633</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-10" style="padding-left:0px; margin-left:15px;padding-bottom: 7px;padding-top:8px;">
+                <a class="footer-link" href="https://twitter.com/CultureIQ" target="_blank"><img style="width:20px;" src="{% static 'img/culture-iq/twitter.svg' %}"></a>
+                <a style="margin-left:10px;" class="footer-link" href="https://www.linkedin.com/company/cultureiq" target="_blank"><img style="width:20px;" src="{% static 'img/culture-iq/linkedin.svg' %}"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-xs-12" style="font-size:12px;margin-top:40px;">
+            Not-A-Copyright 2015 CultureIQ by Jon Schwadron.  All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include 'cultureiq-web/javascripts.html' %}
+
+  </body>
+  </html>
