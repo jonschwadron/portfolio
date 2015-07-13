@@ -4,7 +4,9 @@ from . import views
 urlpatterns = [
     url(r'^$', views.homepage),
 
-    url(r'^cultureiq-web', views.ciqw_index, name="ciqw-index"),
+    url(r'^cultureiq-web/$', views.ciqw_index, name="ciqw-index"),
+    url(r'^cultureiq-web/home/$', views.ciqw_index, name="ciqw-index"),
+    url(r'^cultureiq-web/about/$', views.ciqw_about, name="ciqw-about"),
 
     url(r'^cultureiq-app/$', views.ciqa_index, name="ciqa-index"),
     url(r'^cultureiq-app/index/$', views.ciqa_index, name="ciqa_index"),

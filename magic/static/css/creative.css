@@ -123,8 +123,8 @@ aside {
 
 @media(min-width:768px) {
     .navbar-default {
-        border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+        /*border-color: rgba(255,255,255,1);*/
+        background-color: rgba(255,255,255,.9);
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -138,7 +138,7 @@ aside {
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+        color: black;
     }
 
     .navbar-default .nav > li>a:hover,

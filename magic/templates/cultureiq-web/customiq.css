@@ -1,0 +1,17 @@
+{% load staticfiles %}
+
+<style>
+.navbar-buffer { margin:5px; }
+.top-buffer { margin-top:100px; }
+.top-buffer2 { margin-top:30px; }
+.top-buffer3 { margin-top:20px; }
+.title-buffer { margin:30px; }
+.name-buffer { margin:20px; font-weight:bold; text-transform: uppercase;}
+.container-buffer{padding:100px; }
+.col-centered{float: none;margin: 0 auto; }
+h1 {font-family:'Roboto Slab';font-size:350%;font-weight:lighter;line-height:100%; }
+h2 {font-family:'Roboto Slab';font-size:190%;font-weight:light;line-height:150%; }
+h3 {font-family: 'Open Sans', Helvetica, sans-serif;font-size:140%;font-weight:lighter;line-height:170%; }
+.uppercase { text-transform: uppercase; }
+.verticalcenter { vertical-align:middle; }
+</style>

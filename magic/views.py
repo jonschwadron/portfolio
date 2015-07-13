@@ -6,6 +6,12 @@ def homepage(request):
 def ciqw_index(request):
     return render(request, 'cultureiq-web/index.html')
 
+def ciqw_home(request):
+    return render(request, 'cultureiq-web/index.html')
+
+def ciqw_about(request):
+    return render(request, 'cultureiq-web/about.html')
+
 def ciqa_index(request):
     return render(request, 'cultureiq-app/index.html')
 
