@@ -1,0 +1,164 @@
+<!doctype html>
+{% load staticfiles %}
+<html ng-app="myApp">
+<head>
+	<title>Cost of Living Calculator</title>
+
+	{% include 'cultureiq-web/stylesheets.html' %}
+
+
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="{% static 'personal/css/slider.css' %}" rel="stylesheet">
+	{% include 'cultureiq-web/customiq.css' %}
+
+	<style>
+		.edit-in-place span { cursor: pointer;	}
+		.edit-in-place input { display: none;	}
+		.edit-in-place.active span { display: none;	}
+		.edit-in-place.active input {	display: inline-block;}
+	</style>
+</head>
+
+<body style="padding-bottom: 50px;" ng-controller="myController">
+	<section>
+		<div class="container" >
+			<div class="row text-center">
+				<h1>Cost of living calculator</h1>
+			</div>
+
+			<div class="top-buffer2">
+				<ul ng-repeat="item in items">
+				<div class="row">
+					<div class="col-xs-7">
+						<slider floor="0" ceiling="2000" step="0.01" precision="2" ng-model="item.cost"></slider>
+					</div>
+
+					<div class="col-xs-4">
+						<!-- <h3>Name: -->
+						<span ng-hide="nameEdit" ng-click="nameEdit = true">{$ item.name $}</span>
+						<span ng-show="nameEdit"><input type="text"  ng-model="item.name" placeholder="Name" ng-required/>
+						<button class="btn btn-small" ng-click="nameEdit = false">Save</button></span>
+						<br>
+						<!-- <h3>Cost: -->
+						<span ng-hide="costEdit" ng-click="costEdit = true">{$ item.cost | currency $}</span>
+						<span ng-show="costEdit"><input type="date"  ng-model="item.cost" placeholder="Cost" ng-required/>
+						<button class="btn btn-small" ng-click="costEdit = false">Save</button></span>
+					</div>
+
+					<div class="col-xs-1">
+						<button class="btn" ng-click="removeExpense($index)">Delete</button>
+					</div>
+				</div>
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-7">
+				<a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
+			</div>
+
+			<div class="col-xs-4">
+				<form ng-show="visible" ng-submit="addExpense()">
+					<!-- <label>Name:</label> -->
+					<input type="text" ng-model="newName" placeholder="Name" ng-required/>
+					<!-- <label>Cost:</label> -->
+					<input type="text" ng-model="newCost" placeholder="Cost" ng-required/>
+					<br/>
+					<button class="btn" type="submit">Save</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h2>You need a minimum of {$ total() | currency $} each month, to survive.</h2>
+				<h2>That's {$ total() * 12 | currency $} each year.</h2>
+			</div>
+		</div>
+
+			<!-- <div class="container">
+				<a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
+			</div> -->
+
+			<!-- <form ng-show="visible" ng-submit="addExpense()">
+				<input type="text" ng-model="newName" placeholder="Name" ng-required/>
+				<input type="text" ng-model="newCost" placeholder="Cost" ng-required/>
+				<br/>
+				<button class="btn" type="submit">Save</button>
+			</form> -->
+
+			<!-- <p><button ng-click="addExpense()">Add item</button></p> -->
+
+		</div>
+	</section>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+	<script src="{% static 'personal/js/slider.js' %}"></script>
+
+	<script>
+		var app = angular.module('myApp', ['ui.slider']);
+
+		app.controller('myController',
+        	function DemoController($scope) {
+
+						// Start as not visible but when button is tapped it will show as true
+						$scope.visible = false;
+
+						$scope.$watch('items', function(nval, oval) {
+						 	console.log(nval);
+						});
+
+						// add preset data
+						$scope.items = [];
+						$scope.items.push({name:"Rent",cost:1000});
+						$scope.items.push({name:"Groceries",cost:250});
+						$scope.items.push({name:"Eating out",cost:150});
+						$scope.items.push({name:"Electric",cost:150});
+						$scope.items.push({name:"Internet",cost:50});
+						$scope.items.push({name:"Train",cost:460});
+						$scope.items.push({name:"Subway",cost:120});
+						$scope.items.push({name:"Laundry",cost:50});
+						$scope.items.push({name:"Insurance",cost:150});
+
+						// function to return the total of the items
+						$scope.total = function() {
+							var total = 0;
+							// angularjs has its own forloop function
+							angular.forEach($scope.items, function(item){
+								total += item.cost;
+							});
+							return total;
+						};
+
+						// add expense item
+						$scope.addExpense = function(){
+							// adds the expense item after save button is clicked
+							if($scope.newName && $scope.newCost) {
+								$scope.items.push({
+									name: $scope.newName,
+									cost: parseFloat($scope.newCost) ? parseFloat($scope.newCost) : 0
+								});
+
+								// resets the new expense item entry
+								$scope.newName = "";
+								$scope.newCost = 0;
+							}
+						};
+
+						// remove expense item
+						$scope.removeExpense = function(index){
+							$scope.items.splice(index, 1);
+						};
+
+        	}
+        );
+
+		app.config(function($interpolateProvider) {
+			$interpolateProvider.startSymbol('{$');
+			$interpolateProvider.endSymbol('$}');
+		});
+	</script>
+
+</body>
+</html>

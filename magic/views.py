@@ -3,6 +3,9 @@ from django.shortcuts import render
 def homepage(request):
     return render(request, 'personal/index.html')
 
+def nyc_calc(request):
+    return render(request, 'personal/nyc-calc.html')
+
 def ciqw_index(request):
     return render(request, 'cultureiq-web/index.html')
 

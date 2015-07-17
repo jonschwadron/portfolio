@@ -4,6 +4,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.homepage),
 
+    url(r'^personal/nyc-calc/$', views.nyc_calc, name="nyc-calc"),
+
     url(r'^cultureiq-web/$', views.ciqw_index, name="ciqw-index"),
     url(r'^cultureiq-web/home/$', views.ciqw_index, name="ciqw-index"),
     url(r'^cultureiq-web/about/$', views.ciqw_about, name="ciqw-about"),
