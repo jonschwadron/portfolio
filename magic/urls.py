@@ -5,6 +5,7 @@ urlpatterns = [
     url(r'^$', views.homepage),
 
     url(r'^personal/nyc-calc/$', views.nyc_calc, name="nyc-calc"),
+    url(r'^personal/suggestion-box/$', views.suggestion_box, name="sugestion-box"),
 
     url(r'^cultureiq-web/$', views.ciqw_index, name="ciqw-index"),
     url(r'^cultureiq-web/home/$', views.ciqw_index, name="ciqw-index"),

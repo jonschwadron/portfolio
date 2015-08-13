@@ -1,0 +1,25 @@
+<!doctype html>
+{% load staticfiles %}
+<html ng-app="suggestionBox">
+<head>
+  <title>Suggestion Box</title>
+  {% include 'cultureiq-web/stylesheets.html' %}
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	{% include 'cultureiq-web/customiq.css' %}
+</head>
+
+  <body ng-controller="suggestionBoxController">
+  	<section>
+  		<div class="container" >
+  			<div class="row text-center">
+  				<h1>Suggestion Box</h1>
+          <textarea style="width: 50%; height: 25%;" ng-model="message" placeholder="Enter suggestions here!"></textarea>
+          <p class="text-center">
+          <button ng-click="suggest()">Suggest</button>
+          </p>
+        </div>
+      </div>
+    </section>
+    {% include 'personal/javascripts.html' %}
+  </body>
+</html>

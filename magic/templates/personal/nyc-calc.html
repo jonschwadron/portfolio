@@ -6,7 +6,6 @@
 
 	{% include 'cultureiq-web/stylesheets.html' %}
 
-
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link href="{% static 'personal/css/slider.css' %}" rel="stylesheet">
 	{% include 'cultureiq-web/customiq.css' %}
@@ -75,6 +74,14 @@
 				<h2>That's {$ total() * 12 | currency $} each year.</h2>
 			</div>
 		</div>
+		<button class="btn" ng-click="saveExpense()">Save to List</button>
+		<button class="btn" ng-click="setSort()">Sort</button>
+		<div ng-repeat="unicorns in lists | orderBy:'timestamp':sortDir" >
+			{$ unicorns.timestamp | date:"MM/dd/yyyy 'at' h:mma"$}
+			<div ng-repeat="unicorn in unicorns">
+				<p> {$ unicorn.name $}: {$ unicorn.cost | currency $} </p>
+			</div>
+		</div>
 
 			<!-- <div class="container">
 				<a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
@@ -92,73 +99,7 @@
 		</div>
 	</section>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
-	<script src="{% static 'personal/js/slider.js' %}"></script>
-
-	<script>
-		var app = angular.module('myApp', ['ui.slider']);
-
-		app.controller('myController',
-        	function DemoController($scope) {
-
-						// Start as not visible but when button is tapped it will show as true
-						$scope.visible = false;
-
-						$scope.$watch('items', function(nval, oval) {
-						 	console.log(nval);
-						});
-
-						// add preset data
-						$scope.items = [];
-						$scope.items.push({name:"Rent",cost:1000});
-						$scope.items.push({name:"Groceries",cost:250});
-						$scope.items.push({name:"Eating out",cost:150});
-						$scope.items.push({name:"Electric",cost:150});
-						$scope.items.push({name:"Internet",cost:50});
-						$scope.items.push({name:"Train",cost:460});
-						$scope.items.push({name:"Subway",cost:120});
-						$scope.items.push({name:"Laundry",cost:50});
-						$scope.items.push({name:"Insurance",cost:150});
-
-						// function to return the total of the items
-						$scope.total = function() {
-							var total = 0;
-							// angularjs has its own forloop function
-							angular.forEach($scope.items, function(item){
-								total += item.cost;
-							});
-							return total;
-						};
-
-						// add expense item
-						$scope.addExpense = function(){
-							// adds the expense item after save button is clicked
-							if($scope.newName && $scope.newCost) {
-								$scope.items.push({
-									name: $scope.newName,
-									cost: parseFloat($scope.newCost) ? parseFloat($scope.newCost) : 0
-								});
-
-								// resets the new expense item entry
-								$scope.newName = "";
-								$scope.newCost = 0;
-							}
-						};
-
-						// remove expense item
-						$scope.removeExpense = function(index){
-							$scope.items.splice(index, 1);
-						};
-
-        	}
-        );
-
-		app.config(function($interpolateProvider) {
-			$interpolateProvider.startSymbol('{$');
-			$interpolateProvider.endSymbol('$}');
-		});
-	</script>
+	{% include 'personal/javascripts.html' %}
 
 </body>
 </html>

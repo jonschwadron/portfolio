@@ -6,6 +6,9 @@ def homepage(request):
 def nyc_calc(request):
     return render(request, 'personal/nyc-calc.html')
 
+def suggestion_box(request):
+    return render(request, 'personal/suggestion-box.html')
+
 def ciqw_index(request):
     return render(request, 'cultureiq-web/index.html')
 
