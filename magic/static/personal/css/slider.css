@@ -2,9 +2,9 @@
 slider, [slider] {
   display: inline-block;
   position: relative;
-  height: 7px;
+  height: 17px;
   width: 100%;
-  margin: 25px 5px 25px 5px;
+  margin: 0px 5px 0px 5px;
   vertical-align: middle;
 }
 /* line 10, slider.scss */
@@ -31,14 +31,14 @@ slider div.handle, [slider] div.handle {
   cursor: pointer;
   width: 20px;
   height: 20px;
-  top: -8px;
+  top: -2px;
   background-color: #fff;
   border: 1px solid #000;
   z-index: 2;
   border-radius: 100%;
 }
 /* line 38, slider.scss */
-slider div.handle:after, [slider] div.handle:after {
+/*slider div.handle:after, [slider] div.handle:after {
   content: '';
   background-color: #777;
   width: 8px;
@@ -47,7 +47,7 @@ slider div.handle:after, [slider] div.handle:after {
   top: 6px;
   left: 6px;
   border-radius: 100%;
-}
+}*/
 /* line 48, slider.scss */
 slider div.handle:after:hover, [slider] div.handle:after:hover {
   background-color: #000;
@@ -66,9 +66,9 @@ slider div.bubble, [slider] div.bubble {
   font-family: sans-serif;
 }
 /* line 66, slider.scss */
-slider div.bubble.active, [slider] div.bubble.active {
+/*slider div.bubble.active, [slider] div.bubble.active {
   display: inline-block;
-}
+}*/
 /* line 70, slider.scss */
 slider div.bubble.limit, [slider] div.bubble.limit {
   color: #777;
