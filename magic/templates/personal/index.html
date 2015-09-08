@@ -1,10 +1,20 @@
-{% load staticfiles %}
 
 <!DOCTYPE html>
+
+{% load staticfiles %}
+
 <html lang="en">
 
 <head>
   <title>Jonathan Schwadron</title>
+  <style>
+    p {
+      font-size: 16px;
+    }
+    .circle img {
+    	border-radius: 50%;
+    }
+  </style>
 
   <link href="{% static "personal/css/bootstrap.min.css" %}" rel="stylesheet">
   <link href="{% static "personal/css/landing-page.css" %}" rel="stylesheet">
@@ -38,6 +48,9 @@
             <a href="#resume">resume</a>
           </li>
           <li>
+            <a href="#aboutme">about</a>
+          </li>
+          <li>
             <a href="#contact">contact</a>
           </li>
         </ul>
@@ -52,6 +65,10 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="intro-message">
+            <a href="" class="circle">
+	             <img height="200" width="200" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAOUAAAAJGFlYWViZDVhLTkzMzYtNGI2Yy05NDdjLWM5MDAwZDQwOTk4Nw.jpg" alt="Braden Hamm">
+             </a>
+            <br><br>
             <h1>Jonathan Schwadron</h1>
             <h3>Full Stack Developer</h3>
             <hr class="intro-divider">
@@ -86,24 +103,14 @@
             <br>[django] [angularjs] [bootstrap]
           </p>
           <p>
-            <a href="http://jonschwadron.duckdns.org/cultureiq-app/" target="_blank"><h3>Culture IQ - App</h3></a>
-            Mock up template of CultureIQ's webapp.
-            <br>[ec2] [nginx] [gunicorn] [django] [js] [bootstrap]
-          </p>
-          <p>
-            <a href="http://jonschwadron.duckdns.org/cultureiq-web/" target="_blank"><h3>Culture IQ - Web</h3></a>
-            Mock up template of CultureIQ's website.
-            <br>[ec2] [nginx] [gunicorn] [django] [bootstrap] [css]
-          </p>
-          <p>
             <a href="http://ponder.duckdns.org" target="_blank"><h3>Ponder</h3></a>
             A webapp where you post your thoughts.
-            <br>[ec2] [nginx] [gunicorn] [django] [angularjs] [css] [html5] [postgresql]
+            <br>[nginx] [gunicorn] [django] [angularjs] [css] [html5] [postgresql]
           </p>
-          </div>
         </div>
       </div>
     </div>
+  </div>
 
   <a  name="codes"></a>
   <div class="content-section-a">
@@ -119,7 +126,7 @@
           <p>
             <a href="https://www.replicalabs.com/rendor" target="_blank"><h3>Rendor</h3></a>
             A website that I manage with the Replica Labs team.
-            <br>[ec2] [s3] [nginx] [django] [javascript] [css] [html5]
+            <br>[nginx] [django] [javascript] [css] [html5]
           </p>
           <p>
             <a href="https://github.com/jonschwadron/DjangoRatingSystem" target="_blank"><h3>5-star Rating System</h3></a>
@@ -183,9 +190,8 @@
                     <tbody>
                       <tr>
                         <td width="100%" colspan="2" valign="top">
-                          <p>
+                            <br>
                             <h4><strong>Education</strong></h4>
-                          </p>
                         </td>
                       </tr>
                       <tr>
@@ -218,21 +224,35 @@
                           </p>
                         </td>
                       </tr>
+                      <tr>
+                        <td width="80%" valign="top">
+                          <p>
+                            <strong>BOCES</strong>
+                            , Goshen, NY<strong></strong>
+                            <br>Certificate in Computer Programming
+                            <br>Concentration: Visual Basic and C++
+                          </p>
+                        </td>
+                        <td width="20%" valign="top">
+                          <p>
+                            August 2003
+                          </p>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                   <table border="0" cellspacing="0" cellpadding="0" width="100%">
                     <tbody>
                       <tr>
                         <td width="100%" colspan="2" valign="top">
-                          <p>
+                            <br>
                             <h4><strong>Related Experience</strong><h4>
-                            </p>
                           </td>
                         </tr>
                         <tr>
                           <td width="80%" valign="top">
                             <p>
-                              <strong>Software Engineer, Replica Labs</strong>
+                              <strong>Volunteer Software Engineer, Replica Labs</strong>
                               , Boulder, CO
                               <li>Web development; Django, HTML5, CSS, and JavaScript stack</li>
                               <li>Designed FAQ page using Bootstrap</li>
@@ -252,7 +272,7 @@
                         <tr>
                           <td width="80%" valign="top">
                             <p>
-                              <strong>Software Developer, JBM Technologies</strong>
+                              <strong>Volunteer Android Developer, JBM Technologies</strong>
                               , Farmingdale, NY<strong></strong>
                               <li>Senior Project experience with a team of three.</li>
                               <li>Developed Android app that allows user interactivity to scan QR code, check current balance, transaction history,
@@ -278,36 +298,58 @@
           </div>
         </div>
 
-  <a  name="contact"></a>
-  <div class="content-section-a">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-1 col-sm-4">
-          <hr class="section-heading-spacer">
-          <div class="clearfix"></div>
-          <h2 class="section-heading">contact.</h2>
+        <a  name="aboutme"></a>
+        <div class="content-section-a">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-1 col-sm-4">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">about me.</h2>
+              </div>
+              <div class="col-lg-9 col-lg-offset-2 col-sm-8">
+                <br>
+                <h1>Hello! I'm Jon.</h1>
+                <p>I'm from upstate NY and I'm living in the city for the first
+                  time this year. I am a recent college graduate with no real
+                  world experience. I'm looking to land on a job as a Front-End
+                  Developer or a Full Stack Developer.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-9 col-lg-offset-2 col-sm-8">
-          <br>email: jonschwadron@gmail.com
-	  <br>phone: 845 345 8658
-          <br>text: 845 667 2092
+
+        <a  name="contact"></a>
+        <div class="content-section-a">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-1 col-sm-4">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">contact.</h2>
+              </div>
+              <div class="col-lg-9 col-lg-offset-2 col-sm-8">
+                <br>
+                <p>email: jonschwadron@gmail.com
+                <br>phone: 845.345.8658</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p class="copyright text-muted small">Copyright &copy; Jonathan Schwadron 2015. All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="copyright text-muted small">Copyright &copy; Jonathan Schwadron 2015. All Rights Reserved</p>
+              </div>
+            </div>
+          </div>
+        </footer>
 
-  <script src="{% static 'personal/js/jquery.js' %}"></script>
-  <script src="{% static 'personal/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'personal/js/jquery.js' %}"></script>
+        <script src="{% static 'personal/js/bootstrap.min.js' %}"></script>
 
-</body>
-</html>
+      </body>
+      </html>

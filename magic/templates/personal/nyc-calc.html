@@ -2,104 +2,179 @@
 {% load staticfiles %}
 <html ng-app="myApp">
 <head>
-	<title>Cost of Living Calculator</title>
+	<title>Cost of Living Calculator </title>
 
 	{% include 'cultureiq-web/stylesheets.html' %}
 
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{% static 'personal/css/slider.css' %}" rel="stylesheet">
 	{% include 'cultureiq-web/customiq.css' %}
 
-	<style>
-		.edit-in-place span { cursor: pointer;	}
-		.edit-in-place input { display: none;	}
-		.edit-in-place.active span { display: none;	}
-		.edit-in-place.active input {	display: inline-block;}
+	<style type="text/css">
+	.edit-in-place span { cursor: pointer;	}
+	.edit-in-place input { display: none;	}
+	.edit-in-place.active span { display: none;	}
+	.edit-in-place.active input {	display: inline-block; }
+	.sortorder:after { content: '\25b2'; }
+	.sortorder.reverse:after { content: '\25bc'; }
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		/* display: none; <- Crashes Chrome on hover */
+		-webkit-appearance: none;
+		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	}
+	.top-buffer { margin-top:30px; }
 	</style>
 </head>
 
-<body style="padding-bottom: 50px;" ng-controller="myController">
-	<section>
-		<div class="container" >
-			<div class="row text-center">
-				<h1>Cost of living calculator</h1>
-			</div>
+<body ng-controller="myController">
+	<div class="container" >
+		<div class="row text-center" style="padding-bottom:50px;">
+			<h1>Cost of living calculator</h1>
+		</div>
 
-			<div class="top-buffer2">
-				<ul ng-repeat="item in items">
+		<div>
+			<ul ng-repeat="(expenseName, expenseCost) in items">
 				<div class="row">
-					<div class="col-xs-7">
-						<slider floor="0" ceiling="2000" step="0.01" precision="2" ng-model="item.cost"></slider>
-					</div>
-
-					<div class="col-xs-4">
-						<!-- <h3>Name: -->
-						<span ng-hide="nameEdit" ng-click="nameEdit = true">{$ item.name $}</span>
-						<span ng-show="nameEdit"><input type="text"  ng-model="item.name" placeholder="Name" ng-required/>
-						<button class="btn btn-small" ng-click="nameEdit = false">Save</button></span>
-						<br>
-						<!-- <h3>Cost: -->
-						<span ng-hide="costEdit" ng-click="costEdit = true">{$ item.cost | currency $}</span>
-						<span ng-show="costEdit"><input type="date"  ng-model="item.cost" placeholder="Cost" ng-required/>
-						<button class="btn btn-small" ng-click="costEdit = false">Save</button></span>
-					</div>
-
 					<div class="col-xs-1">
-						<button class="btn" ng-click="removeExpense($index)">Delete</button>
+						<span class="pull-right">{$ expenseName $} </span>
 					</div>
+					<div class="col-xs-10">
+						<slider floor="0" ceiling="4000" step="0.01" precision="2" ng-model="items[expenseName]"></slider>
+					</div>
+					<div class="col-xs-1">
+						<!-- <span>{$ expenseCost | currency $}</span> -->
+						<span ng-hide="costEdit" ng-click="costEdit = true">
+							{$ expenseCost | currency $}
+						</span>
+						<span ng-show="costEdit">
+							<input type="number"  style="height:30px" ng-model="items[expenseName]" placeholder="Cost" ng-required/>
+							<button class="btn btn-xs" ng-click="costEdit = false">Update</button>
+						</span>
+					</div>
+					<!--
+					<div class="col-xs-4">
+
+					<span ng-hide="nameEdit" ng-click="nameEdit = true">{$ item.name $}</span>
+					<span ng-show="nameEdit"><input type="text"  ng-model="item.name" placeholder="Name" ng-required/>
+					<button class="btn btn-small" ng-click="nameEdit = false">Save</button></span>
+					<br>
+
+					<span ng-hide="costEdit" ng-click="costEdit = true">{$ item.cost | currency $}</span>
+					<span ng-show="costEdit"><input type="currency"  ng-model="item.cost" placeholder="Cost" ng-required/>
+					<button class="btn btn-small" ng-click="costEdit = false">Save</button></span>
 				</div>
-			</ul>
-		</div>
 
-		<div class="row">
-			<div class="col-xs-7">
-				<a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
-			</div>
-
-			<div class="col-xs-4">
-				<form ng-show="visible" ng-submit="addExpense()">
-					<!-- <label>Name:</label> -->
-					<input type="text" ng-model="newName" placeholder="Name" ng-required/>
-					<!-- <label>Cost:</label> -->
-					<input type="text" ng-model="newCost" placeholder="Cost" ng-required/>
-					<br/>
-					<button class="btn" type="submit">Save</button>
-				</form>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<h2>You need a minimum of {$ total() | currency $} each month, to survive.</h2>
-				<h2>That's {$ total() * 12 | currency $} each year.</h2>
-			</div>
-		</div>
-		<button class="btn" ng-click="saveExpense()">Save to List</button>
-		<button class="btn" ng-click="setSort()">Sort</button>
-		<div ng-repeat="unicorns in lists | orderBy:'timestamp':sortDir" >
-			{$ unicorns.timestamp | date:"MM/dd/yyyy 'at' h:mma"$}
-			<div ng-repeat="unicorn in unicorns">
-				<p> {$ unicorn.name $}: {$ unicorn.cost | currency $} </p>
-			</div>
-		</div>
-
-			<!-- <div class="container">
-				<a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
+				<div class="col-xs-1">
+				<button class="btn" ng-click="removeExpense($index)">Delete</button>
 			</div> -->
-
-			<!-- <form ng-show="visible" ng-submit="addExpense()">
-				<input type="text" ng-model="newName" placeholder="Name" ng-required/>
-				<input type="text" ng-model="newCost" placeholder="Cost" ng-required/>
-				<br/>
-				<button class="btn" type="submit">Save</button>
-			</form> -->
-
-			<!-- <p><button ng-click="addExpense()">Add item</button></p> -->
-
 		</div>
-	</section>
+	</ul>
+</div>
 
-	{% include 'personal/javascripts.html' %}
+<!-- <div class="row">
+<div class="col-xs-7">
+<a class="btn" ng-click="visible = true"><i class="icon-plus"></i>Add</a>
+</div>
+
+<div class="col-xs-4">
+<form ng-show="visible" ng-submit="addExpense()">
+<input type="text" ng-model="newName" placeholder="Name" ng-required/>
+<input type="text" ng-model="newCost" placeholder="Cost" ng-required/>
+<br/>
+<button class="btn" type="submit">Save</button>
+</form>
+</div>
+</div> -->
+
+<div class="row">
+	<div class="col-xs-12 text-center">
+		<h2>You need a minimum of {$ total() | currency $} each month, to survive.</h2>
+		<h2>That's {$ total() * 12 | currency $} each year.</h2>
+	</div>
+</div>
+
+
+<!-- <button class="btn" ng-click="setSort()">Sort</button> -->
+<button class="btn btn-xs pull-right" ng-click="resetSort()">Reset Sorting</button>
+<button class="btn btn-xs pull-right" ng-click="randomizeExpense()">Randomize</button>
+<button class="btn btn-xs pull-right" ng-click="saveExpense()">Save to List</button>
+
+<p>First column to sort: {$ predicate1 $}<br>
+	 Second column sort: {$ predicate2 $}<br>
+	Ascending: {$ !reverse $}</p>
+
+
+	<div class="row" style="border:1px solid #ff0000">
+		<div class="col-xs-12">
+			<table style="width:100%">
+				<tr>
+					<th>
+						<a href="" ng-click="order('timestamp')">Date</a>
+						<span class="sortorder" ng-show="predicate1 === 'timestamp' || predicate2 === 'timestamp'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('rent')">Rent</a>
+						<span class="sortorder" ng-show="predicate1 === 'rent' || predicate2 === 'rent'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('groceries')">Groceries</a>
+						<span class="sortorder" ng-show="predicate1 === 'groceries' || predicate2 === 'dining'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('dining')">Dining</a>
+						<span class="sortorder" ng-show="predicate1 === 'dining' || predicate2 === 'dining'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('electric')">Electric</a>
+						<span class="sortorder" ng-show="predicate1 === 'electric' || predicate2 === 'electric'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('internet')">Internet</a>
+						<span class="sortorder" ng-show="predicate1 === 'internet' || predicate2 === 'internet'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('transportation')">Transportation</a>
+						<span class="sortorder" ng-show="predicate1 === 'transportation' || predicate2 === 'transportation'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('laundry')">Laundry</a>
+						<span class="sortorder" ng-show="predicate1 === 'laundry' || predicate2 === 'laundry'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('insurance')">Insurance</a>
+						<span class="sortorder" ng-show="predicate1 === 'insurance' || predicate2 === 'insurance'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('other')">Other</a>
+						<span class="sortorder" ng-show="predicate1 === 'other' || predicate2 === 'other'" ng-class="{reverse:reverse}"></span>
+					</th>
+					<th>
+						<a href="" ng-click="order('saveTotal')">Total</a>
+						<span class="sortorder" ng-show="predicate1 === 'saveTotal' || predicate2 === 'saveTotal' " ng-class="{reverse:reverse}"></span>
+					</th>
+				</tr>
+
+				<tr ng-repeat="expenses in lists | orderBy:[predicate1,predicate2]:reverse">
+					<td>{$ expenses.timestamp | date:"MM/dd/yyyy 'at' h:mma" $}</td>
+					<td>{$ expenses.rent | currency $}</td>
+					<td>{$ expenses.groceries | currency $}</td>
+					<td>{$ expenses.dining | currency $}</td>
+					<td>{$ expenses.electric | currency $}</td>
+					<td>{$ expenses.internet | currency $}</td>
+					<td>{$ expenses.transportation | currency $}</td>
+					<td>{$ expenses.laundry | currency $}</td>
+					<td>{$ expenses.insurance | currency $}</td>
+					<td>{$ expenses.other | currency $}</td>
+					<td>{$ expenses.saveTotal | currency $}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- <p> lists: {$ lists $} </p> -->
+</div>
+
+{% include 'personal/javascripts.html' %}
 
 </body>
 </html>
