@@ -86,15 +86,15 @@ app.controller('myController', function DemoController($scope) {
 
 	$scope.randomizeExpense = function(){
 		//randomize value of each objects
-		$scope.items.rent = Math.random(3)*4000;
-		$scope.items.groceries = Math.random(3)*1000;
-		$scope.items.dining = Math.random(3)*2000;
-		$scope.items.electric = Math.random(3)*1000;
-		$scope.items.internet = Math.random(3)*1000;
-		$scope.items.transportation = Math.random(3)*500;
-		$scope.items.laundry = Math.random(3)*100;
-		$scope.items.insurance = Math.random(3)*500;
-		$scope.items.other = Math.random(3)*5000;
+		$scope.items.rent = Math.random()*4000;
+		$scope.items.groceries = Math.random()*1000;
+		$scope.items.dining = Math.random()*2000;
+		$scope.items.electric = Math.random()*1000;
+		$scope.items.internet = Math.random()*1000;
+		$scope.items.transportation = Math.random()*500;
+		$scope.items.laundry = Math.random()*100;
+		$scope.items.insurance = Math.random()*500;
+		$scope.items.other = Math.random()*5000;
 
 		var expenses = angular.copy($scope.items);
 		console.log(JSON.stringify(expenses));
