@@ -6,6 +6,9 @@ def homepage(request):
 def about(request):
     return render(request, 'personal/about.html')
 
+def hearts(request):
+    return render(request, 'personal/hearts.html')
+
 def nyc_calc(request):
     return render(request, 'personal/nyc-calc.html')
 

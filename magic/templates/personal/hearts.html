@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ossum.</title>
+  <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" type="text/css" href="css/app.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style>
+  body {
+    width: 1200px;
+    margin: auto;
+  }
+
+  .left-column {
+    width: 225px;
+    background-color: rgb(255, 50, 100);
+  }
+
+  .right-column {
+    width: 600px;
+    background-color: rgb(0, 150, 255);
+  }
+
+  .left-column,
+  .right-column {
+    height: 750px;
+    float: left;
+  }
+
+  .navbox{
+    margin: 200px 0 0 25px;
+    height: 200px;
+  }
+
+  .rowbox {
+    margin: 200px 25px 0 0;
+    height: 200px;
+  }
+
+  .navbox,
+  .rowbox {
+    padding-left: 25px;
+    background-color: white;
+  }
+
+  .left-sub-column,
+  .right-sub-column {
+    cursor: default;
+    margin: 20px 0 0 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0);
+    display: inline-block;
+    background-color: white;
+  }
+
+
+  #box0{ background-color: rgb(255, 0, 161);}
+  #box1{ background-color: rgb(255, 82, 82);}
+  #box2{ background-color: rgb(57, 221, 132);}
+  #box3{ background-color: rgb(0, 171, 255);}
+
+  #heart0,
+  #heart1,
+  #heart2,
+  #heart3 {
+    padding-top: 22%;
+    padding-bottom: 22%;
+    font-size: 60px;
+    content: "\f004";
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  #box0:hover > #heart0,
+  #box1:hover > #heart1,
+  #box2:hover > #heart2,
+  #box3:hover > #heart3 {
+    transition: all .2s;
+    transform: scale(1);
+    color: white;
+    text-shadow: 0 15px 20px rgba(0, 0, 0, 0.7);
+    transform: translateY(-20px);
+  }
+
+  #box0:active > #heart0,
+  #box1:active > #heart1,
+  #box2:active > #heart2,
+  #box3:active > #heart3 {
+    color: rgb(223, 97, 97);
+  }
+
+  #box0:selection > #heart0,
+  #box1:selection > #heart1,
+  #box2:selection > #heart2,
+  #box3:selection > #heart3 {
+    color: rgb(255, 255, 255);
+  }
+
+  #box0:hover,
+  #box1:hover,
+  #box2:hover,
+  #box3:hover {
+    transition: all .2s;
+    transform: scale(1.5);
+    color: black;
+    text-shadow: 0 7px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  #box0:active,
+  #box1:active,
+  #box2:active,
+  #box3:active {
+    transition: all .1s;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(5);
+  }
+
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Ossum.</h1>
+  </section>
+  <section>
+    <div class="left-column">
+      <div class="navbox">
+        <div class="left-sub-column" id="box0">
+          <i class="fa fa-heart" id="heart0"></i>
+          <br>Hello, Motherfucker.
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="rowbox">
+        <div class="right-sub-column" id="box1">
+          <i class="fa fa-heart" id="heart1"></i>
+          Fucking Charmander
+        </div>
+        <div class="right-sub-column" id="box2">
+          <i class="fa fa-heart" id="heart2"></i>
+          Fucking Bulbasaur
+        </div>
+        <div class="right-sub-column" id="box3">
+          <i class="fa fa-heart" id="heart3"></i>
+          Fucking Squirtle
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
