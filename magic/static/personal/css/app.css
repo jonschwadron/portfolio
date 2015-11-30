@@ -1,9 +1,7 @@
 html {
-  margin: 0 auto;
-  width: 800px;
-  background-color: white;
-  cursor: pointer;
 
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -13,22 +11,55 @@ html {
   user-select: none;
 }
 
-.top-section {
-  width: 100%;
+body {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 800px;
+  background-color: white;
 }
 
-.middle-section {
-  margin-top: 100px;
-  width: 100%;
+section {
+  margin-top: 75px;
+  margin-bottom: 200px;
+ /*background-color: rgba(0, 186, 255, 0.1);*/
+ -webkit-box-shadow: 0px 0px 24px -10px rgba(0,0,0,0.29);
+ -moz-box-shadow: 0px 0px 24px -10px rgba(0,0,0,0.29);
+ box-shadow: 0px 0px 24px -10px rgba(0,0,0,0.29);
 }
 
-.background-column {
-  height: 400px;
+div {
+  /*background-color: rgba(0, 186, 255, 0.1);*/
 }
+
+.intro {
+  text-align: center;
+  padding: 250px 0 1750px 0;
+}
+
+.choose-class {
+  text-align: center;
+  padding: 50px 0 1950px 0;
+}
+
+.moreshit,
+.begin-story,
+.story-page-1,
+.story-page-2,
+.story-page-3,
+.story-page-4,
+.end-story {
+  padding: 25px 75px 1975px 75px;
+}
+
+.moreshit {
+    font-family: "Roboto Slab";
+    font-size: 50px;
+}
+
 
 .left-sub-column,
 .right-sub-column {
-  float: left;
   margin: 40px 40px 40px 40px;
   text-align: center;
   width: 100px;
@@ -130,8 +161,27 @@ html {
 #box1:active,
 #box2:active,
 #box3:active {
-  background: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
   transform: scale(3) translateY(15px);
+}
+
+.column {
+  position: relative;
+  width: 100px;
+  height: 400px;
+  background-color: #333;
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: tan;
+  border: 2px solid black;
+  box-shadow: inset 0 0 15px brown;
+  font-size: 36px;
+  line-height: 96px;
+  text-align: center;
 }
 
 /*@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
@@ -140,3 +190,5 @@ html {
     background-color: red;
   }
 }*/
+
+/*more shit*/

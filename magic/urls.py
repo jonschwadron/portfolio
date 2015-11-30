@@ -5,6 +5,7 @@ urlpatterns = [
     url(r'^$', views.homepage),
     url(r'^about/$', views.about),
     url(r'^hearts/$', views.hearts),
+    url(r'^pokemans/$', views.pokemans),
 
 
     url(r'^personal/nyc-calc/$', views.nyc_calc, name="nyc-calc"),

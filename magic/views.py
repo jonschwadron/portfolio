@@ -9,6 +9,9 @@ def about(request):
 def hearts(request):
     return render(request, 'personal/hearts.html')
 
+def pokemans(request):
+    return render(request, 'personal/pokemans.html')    
+
 def nyc_calc(request):
     return render(request, 'personal/nyc-calc.html')
 

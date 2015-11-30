@@ -1,0 +1,191 @@
+html {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+section{
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+p {
+  margin: 0 0 0 0;
+  padding: 13px 10px 13px 10px;
+}
+
+.player{
+  color: blue;
+}
+.autoplayer{
+  color: red;
+}
+
+#in-play {
+  -webkit-box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+  -moz-box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+  box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+}
+
+#in-play1 {
+
+  // ok, what's up?
+  //ok so, when i select a card...
+  //then i fucking select it.
+  //then when i click the play button
+  //it will take the selected card and move it todo
+  //the 'in-play1' div
+  // is this just css or javascript?
+  //im working on the js right now... which is why
+  //this can wait until tmrw
+  // i can do it with you.
+  //ok, walk me thru the javascript
+  //entire thing? not entire thing. mainly the functions for appending the selected card to the play1.
+    margin-left: 250px;
+}
+
+#in-play2 {
+    margin-left: 25px;
+}
+
+#in-play1, #in-play2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  float: left;
+  width: 200px;
+  height: 266.666667px;
+  -webkit-box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+  -moz-box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+  box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+}
+
+#player-stats {
+  margin-top: 118px;
+  margin-left: -40px;
+}
+
+#pokemanName {
+  margin-top: 0;
+  list-style-type: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  margin: 0 0 0 0;
+  padding: 5px 5px 5px 5px;
+}
+
+#player-hp,
+#player-dmg,
+#player-spd {
+  list-style-type: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 12px;
+}
+
+#Bulbasaur:hover,
+#Caterpie:hover,
+#Charmander:hover,
+#Clefairy:hover,
+#Jigglypuff:hover,
+#Mankey:hover,
+#Meowth:hover,
+#NidoranMale:hover,
+#NidoranFemale:hover,
+#Oddish:hover,
+#Pidgey:hover,
+#Pikachu:hover,
+#Poliwag:hover,
+#Psyduck:hover,
+#Rattata:hover,
+#Squirtle:hover,
+#Vulpix:hover,
+#Weedle:hover {
+  transform: scale(1.1);
+  transition-duration: .1s;
+  transition-timing-function: cubic-bezier(0, .8, .9, 1);
+
+}
+
+#Pokecard, #Bulbasaur, #Caterpie, #Charmander, #Clefairy,
+#Jigglypuff, #Mankey, #Meowth, #NidoranMale,
+#NidoranFemale, #Oddish, #Pidgey, #Pikachu,
+#Poliwag, #Psyduck, #Rattata, #Squirtle,
+#Vulpix, #Weedle {
+  background-size: 200px 266.66667px;
+  background-repeat: no-repeat;
+  margin-left: 100px;
+  width:200px;
+  height:266.666667px;
+  float: left;
+  -webkit-box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+  -moz-box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+  box-shadow: 10px 10px 38px -12px rgba(0,0,0,0.85);
+}
+
+#Pokecard {
+  background-image: url('/static/personal/img/cardback.png');
+}
+
+#Bulbasaur {
+  background-image: url('/static/personal/img/bulbasaur.jpg');
+}
+#Caterpie {
+  background-image: url('/static/personal/img/caterpie.jpg');
+}
+#Charmander {
+  background-image: url('/static/personal/img/charmander.jpg');
+}
+#Clefairy {
+  background-image: url('/static/personal/img/clefairy.jpg');
+}
+#Jigglypuff {
+  background-image: url('/static/personal/img/jigglypuff.jpg');
+}
+#Mankey {
+  background-image: url('/static/personal/img/mankey.jpg');
+}
+#Meowth {
+  background-image: url('/static/personal/img/meowth.jpg');
+}
+#NidoranMale {
+  background-image: url('/static/personal/img/nidoran-male.jpg');
+}
+#NidoranFemale {
+  background-image: url('/static/personal/img/nidoran-female.jpg');
+}
+#Oddish {
+  background-image: url('/static/personal/img/oddish.jpg');
+}
+#Pidgey {
+  background-image: url('/static/personal/img/pidgey.jpg');
+}
+#Pikachu {
+  background-image: url('/static/personal/img/pikachu.jpg');
+}
+#Poliwag {
+  background-image: url('/static/personal/img/poliwag.jpg');
+}
+#Psyduck {
+  background-image: url('/static/personal/img/psyduck.jpg');
+}
+#Rattata {
+  background-image: url('/static/personal/img/rattata.jpg');
+}
+#Squirtle {
+  background-image: url('/static/personal/img/squirtle.jpg');
+}
+#Vulpix {
+  background-image: url('/static/personal/img/vulpix.jpg');
+}
+#Weedle {
+  background-image: url('/static/personal/img/weedle.jpg');
+}

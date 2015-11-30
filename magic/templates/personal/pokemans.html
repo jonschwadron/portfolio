@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>So you wanna be a master of POKEMANS???</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static "personal/css/styles.css" %}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  BLAH
+
+  <section id='autoplayer-cards'></section>
+  <section id='in-play'>
+    <div class="player" id='in-play1'></div>
+    <div class="autoplayer" id='in-play2'></div>
+  </section>
+  <section id='player-cards'></section>
+  <section id='scoreboard'></section>
+
+  <button id='deal'>Deal</button>
+  <button id='play'>Play So-and-So</button>
+
+  <script src="{% static 'personal/js/POKEMANS.js' %}"></script>
+</body>
+</html>
